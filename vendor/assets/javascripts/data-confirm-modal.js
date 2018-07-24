@@ -174,20 +174,24 @@
 
     var modal = $(
       '<div id="'+id+'" class="modal '+modalClass+' '+fade+'" tabindex="-1" role="dialog" aria-labelledby="'+id+'Label" aria-hidden="true">' +
-        '<div class="modal-dialog" role="document">' +
+        '<div class="modal-dialog modal-dialog-centered" role="document">' +
           '<div class="modal-content">' +
-            '<div class="modal-header">' +
-              modalHeader +
+            '<div class="modal-body">' +
+              '<p class="modal-title"></p>' +
+              '<div class="modal-body-content"></div>' +
+              '<div class="pull-right btn-group">' +
+                '<button class="btn cancel" data-dismiss="modal" aria-hidden="true"></button>' +
+                '<button class="btn commit"></button>' +
+              '</div>'+
             '</div>' +
-            '<div class="modal-body"></div>' +
-            '<div class="modal-footer">' +
-              '<button class="btn cancel" data-dismiss="modal" aria-hidden="true"></button>' +
-              '<button class="btn commit"></button>' +
-            '</div>'+
+            '<div class="modal-logo mt-3">' +
+              '<img class="logo float-right" src="/assets/logos/main-simple-logo-6783201d48748d9e92e85a8ec87e0646e1db9ba6046aa13b59606890696f5cce.png" alt="Main simple logo">' +
+            '</div>' +
           '</div>'+
         '</div>'+
       '</div>'
     );
+
 
     // Make sure it's always the top zindex
     var highest = current = settings.zIndex;
@@ -201,7 +205,7 @@
 
     modal.find('.modal-title').text(options.title || settings.title);
 
-    var body = modal.find('.modal-body');
+    var body = modal.find('.modal-body-content');
 
     $.each((options.text||'').split(/\n{2}/), function (i, piece) {
       body.append($('<p/>').html(piece));
