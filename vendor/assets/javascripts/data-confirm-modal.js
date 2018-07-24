@@ -180,7 +180,7 @@
               '<p class="modal-title"></p>' +
               '<div class="modal-body-content"></div>' +
               '<div class="pull-right btn-group">' +
-                '<button class="btn cancel" data-dismiss="modal" aria-hidden="true"></button>' +
+                '<a class="cancel mt-2" data-dismiss="modal"></a>' +
                 '<button class="btn commit"></button>' +
               '</div>'+
             '</div>' +
